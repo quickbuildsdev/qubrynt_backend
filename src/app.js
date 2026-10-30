@@ -10,9 +10,9 @@ import { config } from './config/index.js'
 import authRoutes from './routes/auth.routes.js'
 import dataRoutes from './routes/data.routes.js'
 import { errorHandler, notFound } from './middleware/error.js'
-import dns from 'dns'
+// import dns from 'dns'
 
-dns.setServers(['1.1.1.1','4.4.4.4']);
+// dns.setServers(['1.1.1.1','4.4.4.4']); For some reason this doesn't work in Node.js 20, so we set the DNS servers in the Dockerfile instead
 const pkg = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8'))
 
 // Never let request bodies be used as query operators
