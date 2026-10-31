@@ -16,7 +16,7 @@ export const config = {
   mongoUri: process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/qubrynt',
   jwtSecret,
   jwtExpires: process.env.JWT_EXPIRES || '7d',
-    // one or more allowed frontend URLs, comma separated; trailing slashes are ignored
+  // one or more allowed frontend URLs, comma separated; trailing slashes are ignored
   clientOrigin: (process.env.CLIENT_ORIGIN || 'http://localhost:5173').split(',').map((s) => s.trim().replace(/\/+$/, '')).filter(Boolean),
   trustProxy: process.env.TRUST_PROXY === '1',
 }

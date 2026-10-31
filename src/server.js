@@ -1,12 +1,11 @@
 import mongoose from 'mongoose'
 import { config } from './config/index.js'
-import { createApp } from './app.js'
+import { createApp } from './createApp.js'
 import { collections } from './models/collections.js'
 import { User } from './models/User.js'
 
 async function start() {
   try {
-    console.log(`Connecting to MongoDB at ${config.mongoUri}`);
     await mongoose.connect(config.mongoUri, { serverSelectionTimeoutMS: 8000 })
   } catch (err) {
     console.error(`\nCould not connect to MongoDB at ${config.mongoUri.replace(/\/\/.*@/, '//***@')}`)
